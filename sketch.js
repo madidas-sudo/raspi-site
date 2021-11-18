@@ -1,11 +1,14 @@
 function setup() {
-    createCanvas(window.innerWidth, window.innerHeight);
+    //3d sketch
+    createCanvas(windowWidth, windowHeight, WEBGL);
 }
 
 function draw() {
     background(52);
-    stroke(255);
-    strokeWeight(2);
-    noFill();
-    ellipse(mouseX, mouseY, 80, 80);
+    //create cube that spins with the mouse
+    push();
+    rotateX(mouseX* 0.01);
+    rotateY(mouseY * 0.01);
+    box(100);
+    pop();
 }
